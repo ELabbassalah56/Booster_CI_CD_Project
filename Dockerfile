@@ -1,9 +1,8 @@
 FROM ubuntu
-
 RUN apt-get update -qq
 RUN apt-get install -y python3.6
 RUN apt-get install -y python3-pip
-COPY . /simpleApp
+ADD . /simpleApp
 WORKDIR /simpleApp
 RUN pip3 install -r requirements.txt
 RUN python3 manage.py makemigrations
